@@ -43,39 +43,50 @@ with **Docker** and **Docker Compose** for easy setup and deployment.
 
 ⚙️ Prerequisites
 
-Before you begin, make sure you have installed:
+Docker & Docker Compose (for Docker setup)
 
-Docker
+Python 3.10+ and pip (for non-Docker setup)
 
-Docker Compose
-
-▶️ Run the project with Docker
+▶️ Run with Docker
 1️⃣ Clone the repository
 git clone https://github.com/your-username/employee-manager.git
 cd employee-manager
 
-2️⃣ Build the Docker images
+2️⃣ Build Docker images
 docker-compose build
 
-3️⃣ Start the application
+3️⃣ Start the app
 docker-compose up
 
-🌐 Access the application
-
-Once the containers are running, open your browser and go to:
-
+4️⃣ Open in browser
 http://localhost:8000
 
-🗄️ Django migrations
+▶️ Run without Docker
+1️⃣ Clone repository & enter app folder
+git clone https://github.com/your-username/employee-manager.git
+cd employee-manager/app
 
-Apply migrations:
+2️⃣ Create virtual environment
+python -m venv venv
+# macOS / Linux
+source venv/bin/activate
+# Windows
+venv\Scripts\activate
 
-docker-compose exec web python manage.py migrate
+3️⃣ Install dependencies
+pip install -r requirements.txt
 
+4️⃣ Apply migrations
+python manage.py migrate
 
-Create a superuser:
+5️⃣ Create superuser (optional)
+python manage.py createsuperuser
 
-docker-compose exec web python manage.py createsuperuser
+6️⃣ Start development server
+python manage.py runserver
+
+7️⃣ Access in browser
+http://127.0.0.1:8000
 
 🎨 User Interface
 
