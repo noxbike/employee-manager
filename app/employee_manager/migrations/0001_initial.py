@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('first_name', models.CharField(max_length=30)),
                 ('last_name', models.CharField(max_length=30)),
                 ('email', models.EmailField(max_length=254, unique=True)),
-                ('position', models.DecimalField(decimal_places=2, max_digits=10)),
+                ('position', models.CharField(max_length=100)),
                 ('hire_date', models.DateField()),
             ],
         ),
