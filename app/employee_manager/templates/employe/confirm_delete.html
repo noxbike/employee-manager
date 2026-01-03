@@ -1,0 +1,12 @@
+{% extends "employe/base.html" %}
+
+{% block content %}
+<form method="POST" class="space-y-4 flex flex-col">
+    {% csrf_token %}
+    <p class="text-lg text-center">Are you sure you want to delete <strong>{{ employe.first_name }} {{ employe.last_name }}</strong>?</p>
+    <div class="flex gap-4 flex-col">
+        <button class="btn btn-error" type="submit">Yes, Delete</button>
+        <a href="{% url 'employee_list' %}" class="btn btn-primary w-full">Cancel</a>
+    </div>
+</form>
+{% endblock %}
